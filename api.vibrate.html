@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vibrate Api</title>
+</head>
+<body>
+    <h1>Vibrate api</h1>
+    <p>Uses the vibration motor of the device. This api needs a user interaction like touch or a click, if not returns an error</p>
+    <button onclick="vibrateOnce()">Vibrate once</button>
+    <button onclick="vibrateContinous()">Vibrate Continous</button>
+    <script>
+        // for error generation only
+        navigator.vibrate(100)
+
+        function vibrateOnce() {
+            if(navigator.vibrate) {
+                navigator.vibrate(100);
+            }
+        }
+
+        function vibrateContinous(){
+            if(navigator.vibrate) {
+                navigator
+                    .vibrate([100, 10, 100, 10, 100]); // [play, pause, play, pause] in ms
+            }
+        }
+    </script>
+</body>
+</html>
