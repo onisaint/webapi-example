@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Device Orientation</title>
+</head>
+
+<body>
+    <h1>Device Orientation Api</h1>
+    <p>This works with most of the browsers or you need to polyfill. Gives the Orientation with alpha beta and gama being x
+        y and z parameters</p>
+    <small>Note: gyronorm.js is a polyfill for normalizing the accelerometer and gyroscope data on mobile devices. This is useful
+        for overcoming some of the differences in device support for device orientation. This library depends on software
+        with Creative Commons Non-Commercial License 4.0.</small>
+
+    <h1 id="alpha">alpha : </h1>
+    <h1 id="beta">beta : </h1>
+    <h1 id="gamma">gamma : </h1>
+    <script>
+        const $alpha = document.getElementById('alpha');
+        const $beta = document.getElementById('beta');
+        const $gamma = document.getElementById('gamma');
+
+        function handleOrientation(event) {
+            console.log(event.absolute);
+            
+            $alpha.innerText = `Alpha : ${event.alpha}`;
+            $beta.innerText = `Beta : ${event.beta}`;
+            $gamma.innerText = `Beta : ${event.gamma}`;
+        }
+
+        window.addEventListener("deviceorientation", handleOrientation, true);
+    </script>
+</body>
+
+</html>
